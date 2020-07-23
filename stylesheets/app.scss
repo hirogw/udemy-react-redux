@@ -1,0 +1,24 @@
+.app {
+  width: 1000px;
+  margin: 40px auto 0;
+  display: flex;
+}
+
+.left-navi {
+  list-style-type: none;
+  margin-right: $base-margin;
+  padding-right: $base-margin;
+  border-right: 1px solid #ccc;
+}
+.app-title {
+  margin-top: 0;
+  text-align: center;
+}
+
+.result-area {
+  display: flex;
+}
+
+.result-right {
+  margin-left: 20px;
+}

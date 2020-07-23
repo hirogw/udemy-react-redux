@@ -1,0 +1,17 @@
+$background-color: #eee;
+$text-color: #444;
+$base-margin: 40px;
+
+body {
+    margin: 0;
+    background-color: $background-color;
+    color: $text-color;
+}
+
+@import 'reset';
+@import 'App';
+@import 'Map';
+@import 'SearchForm';
+@import 'GeocodeResult';
+@import 'HotelsTable';
+@import 'HotelsClickableTh';
