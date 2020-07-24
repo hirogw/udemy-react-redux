@@ -1,6 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const publidDir = path.join(__dirname, '/public');
 module.exports = [
@@ -15,6 +16,7 @@ module.exports = [
     },
     module: {
       rules: [{
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
@@ -30,8 +32,9 @@ module.exports = [
       contentBase: publidDir,
     },
     plugins: [
-      new Dotenv({
-        path: './.env',
+      new Dotenv(),
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
       }),
     ],
   },
