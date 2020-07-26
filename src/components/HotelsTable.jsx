@@ -39,10 +39,10 @@ HotelsTable.defaultProps = {
   hotels: [],
 };
 
-const sortedHotels = (hotels, sortKey) => _.sortBy(hotels, (h) => h[sortKey]);
+const sortedHotels = (hotels, sortKey, order) => _.orderBy(hotels, (h) => h[sortKey], order);
 
 export default connect(
   (state) => ({
-    hotels: sortedHotels(state.hotels, state.sortKey),
+    hotels: sortedHotels(state.hotels, state.sortKey, state.order),
   }),
 )(HotelsTable);

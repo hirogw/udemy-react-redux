@@ -9,6 +9,8 @@ export const setHotels = (hotels) => (dispatch) => dispatch({ type: 'CHANGE_HOTE
 
 export const setSortKey = (sortKey) => (dispatch) => dispatch({ type: 'CHANGE_SORT_KEY', sortKey });
 
+export const setOrder = (order) => (dispatch) => dispatch({ type: 'CHANGE_ORDER', order });
+
 export const startSearch = () => (dispatch, getState) => {
   geocode(getState().place)
     .then(({ status, address, location }) => {
