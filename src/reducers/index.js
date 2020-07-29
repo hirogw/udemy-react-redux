@@ -45,10 +45,17 @@ const geocodeResult = (
   }
 };
 
-const condition = (state = '', action) => {
+const condition = (state = [], action) => {
+  const newState = state;
   switch (action.type) {
-  case 'CHANGE_CONDITION':
-    return action.condition;
+  case 'PUSH_CONDITION': {
+    newState.push(action.condition);
+    return newState;
+  }
+  case 'SPLICE_CONDITION': {
+    newState.splice(newState.indexOf(action.condition), 1);
+    return newState;
+  }
   default:
     return state;
   }

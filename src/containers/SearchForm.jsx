@@ -8,8 +8,20 @@ import { setPlace, startSearch } from '../actions';
 const SearchForm = (props) => {
   const conditions = [
     {
+      label: '禁煙ルーム',
+      value: 'kinen',
+    },
+    {
+      label: 'インターネットが出来る部屋',
+      value: 'internet',
+    },
+    {
       label: '大浴場あり',
       value: 'daiyoku',
+    },
+    {
+      label: '温泉',
+      value: 'onsen',
     },
   ];
 

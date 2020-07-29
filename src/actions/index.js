@@ -11,7 +11,13 @@ export const setSortKey = (sortKey) => (dispatch) => dispatch({ type: 'CHANGE_SO
 
 export const setOrder = (order) => (dispatch) => dispatch({ type: 'CHANGE_ORDER', order });
 
-export const setCondition = (condition) => (dispatch) => dispatch({ type: 'CHANGE_CONDITION', condition });
+export const setCondition = (condition) => (dispatch, getState) => {
+  if (getState().condition.indexOf(condition) === -1) {
+    dispatch({ type: 'PUSH_CONDITION', condition });
+  } else {
+    dispatch({ type: 'SPLICE_CONDITION', condition });
+  }
+};
 
 export const startSearch = () => (dispatch, getState) => {
   geocode(getState().place)

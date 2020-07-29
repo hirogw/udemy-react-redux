@@ -11,7 +11,7 @@ export const searchHotelByLocation = (location, condition) => {
     datumType: 1,
     latitude: location.lat,
     longitude: location.lng,
-    squeezeCondition: condition,
+    squeezeCondition: condition.join(','),
   };
 
   return Rakuten.Travel.simpleHotelSearc(params)

@@ -16,7 +16,7 @@ const SearchCondition = (props) => {
         checked={isChecked}
         onChange={(e) => {
           setIsChecked(e.target.checked);
-          props.setCondition(e.target.checked ? e.target.value : '');
+          props.setCondition(e.target.value);
         }}
       />
       {condition.label}
