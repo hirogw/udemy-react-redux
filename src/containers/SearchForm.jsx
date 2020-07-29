@@ -49,7 +49,9 @@ const SearchForm = (props) => {
         }}
       />
       <input className="submit-button" type="submit" value="検索" />
-      {conditionList}
+      <ul className="search-conditions">
+        {conditionList}
+      </ul>
     </form>
   );
 };

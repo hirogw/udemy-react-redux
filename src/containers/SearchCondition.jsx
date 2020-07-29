@@ -9,7 +9,7 @@ const SearchCondition = (props) => {
   const { condition } = props;
 
   return (
-    <div>
+    <li>
       <input
         type="checkbox"
         value={condition.value}
@@ -20,7 +20,7 @@ const SearchCondition = (props) => {
         }}
       />
       {condition.label}
-    </div>
+    </li>
   );
 };
 
