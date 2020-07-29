@@ -11,6 +11,8 @@ export const setSortKey = (sortKey) => (dispatch) => dispatch({ type: 'CHANGE_SO
 
 export const setOrder = (order) => (dispatch) => dispatch({ type: 'CHANGE_ORDER', order });
 
+export const setCondition = (condition) => (dispatch) => dispatch({ type: 'CHANGE_CONDITION', condition });
+
 export const startSearch = () => (dispatch, getState) => {
   geocode(getState().place)
     .then(({ status, address, location }) => {
@@ -21,7 +23,7 @@ export const startSearch = () => (dispatch, getState) => {
           address,
           location,
         });
-        return searchHotelByLocation(location);
+        return searchHotelByLocation(location, getState().condition);
       }
       case 'ZERO_RESULTS': {
         dispatch(setErrorMessage('結果が見つかりませんでした'));

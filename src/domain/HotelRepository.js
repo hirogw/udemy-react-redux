@@ -5,12 +5,13 @@ import Rakuten from '../lib/Rakuten';
 const RAKUTEN_APP_ID = process.env.RAKUTEN_APP_ID;
 
 // eslint-disable-next-line
-export const searchHotelByLocation = (location) => {
+export const searchHotelByLocation = (location, condition) => {
   const params = {
     applicationId: RAKUTEN_APP_ID,
     datumType: 1,
     latitude: location.lat,
     longitude: location.lng,
+    squeezeCondition: condition,
   };
 
   return Rakuten.Travel.simpleHotelSearc(params)

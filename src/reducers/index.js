@@ -45,6 +45,15 @@ const geocodeResult = (
   }
 };
 
+const condition = (state = '', action) => {
+  switch (action.type) {
+  case 'CHANGE_CONDITION':
+    return action.condition;
+  default:
+    return state;
+  }
+};
+
 const hotels = (state = [], action) => {
   switch (action.type) {
   case 'CHANGE_HOTELS':
@@ -72,4 +81,4 @@ const order = (state = 'asc', action) => {
   }
 };
 
-export default combineReducers({ place, geocodeResult, hotels, sortKey, order });
+export default combineReducers({ place, geocodeResult, hotels, condition, sortKey, order });

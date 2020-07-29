@@ -1,31 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import SearchCondition from './SearchCondition';
 
 import { setPlace, startSearch } from '../actions';
 
-const SearchForm = (props) => (
-  <form
-    className="search-form"
-    onSubmit={(e) => {
-      e.preventDefault();
-      props.history.push(`/?place=${props.place}`);
-      props.startSearch();
-    }}
-  >
-    <input
-      type="text"
-      size="30"
-      className="place-input"
-      value={props.place}
-      onChange={(e) => {
+const SearchForm = (props) => {
+  const conditions = [
+    {
+      label: '大浴場あり',
+      value: 'daiyoku',
+    },
+  ];
+
+  const conditionList = conditions.map((condition) => (
+    <SearchCondition condition={condition} key={condition.value} />
+  ));
+
+  return (
+    <form
+      className="search-form"
+      onSubmit={(e) => {
         e.preventDefault();
-        props.setPlace(e.target.value);
+        props.history.push(`/?place=${props.place}`);
+        props.startSearch();
       }}
-    />
-    <input className="submit-button" type="submit" value="検索" />
-  </form>
-);
+    >
+      <input
+        type="text"
+        size="30"
+        className="place-input"
+        value={props.place}
+        onChange={(e) => {
+          e.preventDefault();
+          props.setPlace(e.target.value);
+        }}
+      />
+      <input className="submit-button" type="submit" value="検索" />
+      {conditionList}
+    </form>
+  );
+};
 
 SearchForm.propTypes = {
   place: PropTypes.string.isRequired,
