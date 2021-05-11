@@ -21,7 +21,7 @@
     "geolib": "^3.2.1",
     "html-webpack-plugin": "^4.3.0",
     "import-glob-loader": "^1.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "query-string": "^6.11.1",
