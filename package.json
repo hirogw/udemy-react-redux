@@ -22,7 +22,7 @@
     "html-webpack-plugin": "^4.3.0",
     "import-glob-loader": "^1.1.0",
     "lodash": "^4.17.15",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "query-string": "^6.11.1",
     "react": "^16.13.1",
